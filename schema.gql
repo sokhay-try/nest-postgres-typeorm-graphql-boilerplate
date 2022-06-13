@@ -1,0 +1,38 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Metadata {
+  total: Int!
+  limit: Int!
+  page: Int!
+}
+
+type UserType {
+  createdBy: String
+  createdAt: DateTime!
+  updatedBy: String
+  updatedAt: DateTime!
+  id: ID!
+  username: String
+  password: String
+  token: String
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  getUserById(id: Float!): UserType!
+}
+
+type Mutation {
+  createUser(userInput: UserInput!): UserType!
+}
+
+input UserInput {
+  username: String!
+  password: String!
+}
